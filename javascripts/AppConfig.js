@@ -1,5 +1,9 @@
-'use strict'
+'use strict';
 //app config runs one time. no fat arrow
+app.run(function(FIREBASE_CONFIG) {
+	firebase.initializeApp(FIREBASE_CONFIG);
+});
+
 app.config(function($routeProvider){
 	$routeProvider
 		.when("/auth", {
@@ -18,5 +22,5 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/rated.html',
 			controller: 'RatedCtrl'
 		})
-		.otherwise('/auth')
+		.otherwise('/auth');
 });
