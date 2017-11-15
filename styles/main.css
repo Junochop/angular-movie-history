@@ -1,2 +1,12 @@
-body {
-  background-color: lightblue; }
+.movie .poster_path {
+  height: 375px; }
+
+.movie h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.movie .overview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100px; }
