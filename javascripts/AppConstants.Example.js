@@ -9,4 +9,4 @@ app.constant("FIREBASE_CONFIG", {
     messagingSenderId: ""
   		});
 
-app.constant("TMDB_CONFIG", '')
+app.constant("TMDB_CONFIG", '');

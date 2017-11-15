@@ -10,5 +10,7 @@
     messagingSenderId: "981162933206"
   		});
 
+	app.constant("TMDB_CONFIG", 'f5a03e645976791bfa81353b76f130b6');
+
   // Initialize Firebase
  
