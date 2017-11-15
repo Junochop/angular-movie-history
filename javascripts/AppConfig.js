@@ -15,7 +15,7 @@ app.config(function($routeProvider){
 			controller: 'SearchCtrl'
 		})
 		.when("/wishlist", {
-			templateUrl: 'partials/WishlistCtrl.html',
+			templateUrl: 'partials/wishlist.html',
 			controller: 'WishlistCtrl'
 		})
 		.when("/rated", {
