@@ -1,3 +1,6 @@
 @import 'color';
-@import 'movies'
+@import 'movies';
 
+body {
+  background-color: $blue;
+}
