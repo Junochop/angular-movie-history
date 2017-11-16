@@ -53,7 +53,13 @@ const getRatedMovies = (userUid) => {
   });
  };
 
-  return {getRatedMovies, getWishListMovies};	
+  const postNewMovie = (newMovie) => {
+  	return $http.post(`${FIREBASE_CONFIG.databaseURL}/movies.json`, JSON.stringify(newMovie));
+  	//no mods required so no q involved when data is returning
+
+  };
+
+  return {getRatedMovies, getWishListMovies, postNewMovie};	
 });
 
 
