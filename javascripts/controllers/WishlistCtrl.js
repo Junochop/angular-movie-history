@@ -1,11 +1,22 @@
 'use strict';
 
 app.controller("WishlistCtrl", function($rootScope, $scope, MovieService){
-	
-	MovieService.getWishListMovies($rootScope.uid).then((results) => { //load on page loade 
-		$scope.movies = results;
-	}).catch((err) => {
-		console.log("error in the get rated", err);
-	});
+  
+  const getMovies = () => {
+    MovieService.getWishListMovies($rootScope.uid).then((results) =>{
+      $scope.movies = results;
+    }).catch((err) =>{
+      console.log("error in getRatedMovies", err);
+    });
+  };
+  
+  getMovies();
 
+  $scope.deleteMovie = (movieId) => {
+    MovieService.deleteMovie(movieId).then((result) =>{
+      getMovies();
+    }).catch((err) =>{
+      console.log("error in deleteMovie", err);
+    });
+  };
 });
