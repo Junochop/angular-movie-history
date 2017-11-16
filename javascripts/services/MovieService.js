@@ -58,8 +58,12 @@ const getRatedMovies = (userUid) => {
   	//no mods required so no q involved when data is returning
 
   };
+  const deleteMovie = (movieId) => {
+  	return $http.delete(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`);
+  };
 
-  return {getRatedMovies, getWishListMovies, postNewMovie};	
+
+  return {getRatedMovies, getWishListMovies, postNewMovie, deleteMovie};	
 });
 
 
