@@ -63,7 +63,7 @@ const getRatedMovies = (userUid) => {
   };
 
   const updateMovie = (movie, movieId) => {
-  	return $http.delete(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`, JSON.stringify(movie));
+  	return $http.put(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`, JSON.stringify(movie));
   };
 
   const createMovieObject = (movie) => {
@@ -77,7 +77,12 @@ const getRatedMovies = (userUid) => {
 		};
 	};
 
-  return {getRatedMovies, getWishListMovies, postNewMovie, deleteMovie, updateMovie, createMovieObject};	
+	const getSingleMovie = (movieId) => {
+		  	return $http.get(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`);
+
+	};
+
+  return {getRatedMovies, getWishListMovies, postNewMovie, deleteMovie, updateMovie, createMovieObject, getSingleMovie};	
 });
 
 
