@@ -62,8 +62,22 @@ const getRatedMovies = (userUid) => {
   	return $http.delete(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`);
   };
 
+  const updateMovie = (movie, movieId) => {
+  	return $http.delete(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`, JSON.stringify(movie));
+  };
 
-  return {getRatedMovies, getWishListMovies, postNewMovie, deleteMovie};	
+  const createMovieObject = (movie) => {
+		return {
+			"title": movie.title,
+			"overview": movie.overview,
+			"poster_path": movie.poster_path,
+			"rating": movie.rating,
+			"isWatched": movie.isWatched,
+			"uid": movie.uid
+		};
+	};
+
+  return {getRatedMovies, getWishListMovies, postNewMovie, deleteMovie, updateMovie, createMovieObject};	
 });
 
 
